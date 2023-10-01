@@ -1,0 +1,14 @@
+@model Candidate
+
+<div>
+    <h3>Tebrikler @Model.FullName</h3>
+    <p class="lead">Kursa <mark>kabul edildiniz.</mark></p>
+    <p class="lead">Ýlginiz için çok teþekkür ederiz.</p>
+    <blockquote class="blockquote">@Model.SelectedCourse kursuna kaydoldunuz.</blockquote>
+    <p class="text-muted">@Model.ApplyAt tarihinde baþvurdunuz.</p>
+
+    <div class="btn-group">
+        <a class="btn btn-outline-success" asp-action="Index">Baþvurular</a>
+        <a class="btn btn-success" asp-action="Index" asp-controller="Home">Ana Sayfa</a>
+    </div>
+</div>

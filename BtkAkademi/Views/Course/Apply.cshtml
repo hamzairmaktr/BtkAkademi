@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Apply";
+    @model Candidate
+}
+
+<div class="display-6">
+    Apply
+</div>
+
+
+<form method="post" asp-action="apply">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-group my-2">
+        <label asp-for="Email"></label>
+        <input class="form-control" type="email" asp-for="Email">
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="FirstName">First Name</label>
+        <input class="form-control" type="text" asp-for="FirstName">
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="LastName">Last Name</label>
+        <input class="form-control" type="text" asp-for="LastName">
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="Age"></label>
+        <select asp-for="Age">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+        </select>
+    </div>
+    <fieldset>
+        <legend>Select One Course</legend>
+    </fieldset>
+    <div class="form-group my-2">
+        <input type="radio" asp-for="SelectedCourse" id="mvc" checked  value="Asp .Net Core Mvc">
+        <label for="mvc" asp-for="SelectedCourse">Asp .Net Core Mvc</label>
+    </div>
+    <div class="form-group my-2">
+        <input type="radio" asp-for="SelectedCourse" id="api" value="Asp .Net Core Api">
+        <label asp-for="SelectedCourse" for="api">Asp .Net Core Api</label>
+    </div>
+    <div class="form-group my-2">
+        <input type="radio" asp-for="SelectedCourse" id="blazor" value="Blazor">
+        <label asp-for="SelectedCourse" for="blazor">Blazor</label>
+    </div>
+
+    <div class="my-2">
+        <button type="submit" class="btn btn-primary">Apply</button>
+        <a asp-controller="Home" asp-action="index" class="btn btn-warning">Home</a>
+    </div>
+</form>
